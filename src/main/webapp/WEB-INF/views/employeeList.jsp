@@ -31,7 +31,7 @@
 		</div>
 		<br>
 		<div>
-			<label>社員ID</label> <form:input path="employeeNo"  />
+			<label>社員ID</label> <form:input path="employeeID"  />
 		</div>
 		<br>
 		<div>
@@ -51,12 +51,12 @@
 		</div>
 		<br>
 		<div>
-			<label>生年月日</label> <input id="birthDate" name="birthDate" type="text" Value="${birthDate}">
+			<label>生年月日</label> <input id="birthday" name="birthday" type="text" Value="${birthday}">
 		</div>
 		<br>
 		<div>
 			<label>入社年月日</label> <input
-				id="nyushaDate" name="nyushaDate" type="text" Value="${nyushaDate}">
+				id="hireDate" name="hireDate" type="text" Value="${hireDate}">
 		</div>
 
 		<br>
