@@ -22,6 +22,7 @@
 </head>
 
 <body>
+<!-- 
 	<script>
 		$(function() {
 			$("#response").html("Response Values");
@@ -227,7 +228,7 @@
 					alert("AJAXの編集処理はERRORがあり by Yan");
 				}
 			});
-		}
+		
 /*
 		function oneRowDeleteClick(selected番号) {
 
@@ -263,7 +264,8 @@
 			alert("errorThrown:" + errorThrown);
 		}
 	</script>
-	<form:form name="theForm" id="theForm" modelAttribute="employeeForm"
+ -->
+	<form:form name="theForm" id="theForm" modelAttribute="LoginBean"
 		method="get">
 		<h1>ソフトテク株式会社</h1>
 		<h2>社内管理システム</h2>
@@ -274,7 +276,7 @@
 		</div>
 		<br>
 		<div>
-			<label>パスワード：</label> <input id="Password" name="Password"
+			<label>パスワード：</label> <input id="password" name="password"
 				type="text" Value="">
 		</div>
 		<div>

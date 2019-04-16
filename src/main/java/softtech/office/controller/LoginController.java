@@ -1,6 +1,5 @@
 package softtech.office.controller;
 
-import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -18,9 +17,9 @@ import softtech.office.service.EmployeeService;
 
 
 @Controller
-public class EmployeeController {
+public class LoginController {
 
-	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
 	@ModelAttribute
     public EmployeeBean setUpEmployeeBean() {
@@ -33,16 +32,16 @@ public class EmployeeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/employee", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 	
-		List<EmployeeBean> beans = service.getEmployee("1");
-		EmployeeBean ebean = beans.get(0);
+//		List<EmployeeBean> beans = service.getEmployee("1");
+//		EmployeeBean ebean = beans.get(0);
+//		
+//		model.addAttribute("employeeForm", ebean);
 		
-		model.addAttribute("employeeForm", ebean);
-		
-		return "employeeList";
+		return "login";
 		
 	}
 }

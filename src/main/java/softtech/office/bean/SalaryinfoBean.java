@@ -6,7 +6,6 @@ import lombok.Data;
 
 // getter,setter,toStringなど、lombokで自動化される。
 public class SalaryinfoBean{
-	String s_ID;
 	String employeeNo;
 	String month;
 	String paymentDate;
