@@ -203,7 +203,7 @@
 					/* 					var obj = eval("("+data+")");
 					 if(obj.success==undefined){//查询成功，跳转到详情页面 */
 				if(data[0]){
-					$("#employeeNo").val(data[0].employeeNo);
+					$("#employeeID").val(data[0].employeeID);
 					$("#employeeName").val(data[0].employeeName);
 					$("#sex").val(data[0].sex);
 					$("#birthday").val(data[0].birthday);
@@ -280,7 +280,8 @@
 				type="text" Value="">
 		</div>
 		<div>
-			<input type="button" id="login_btn" Value="ログイン">
+			<input type="submit" id="login_btn" Value="ログイン">
+			<input type="reset" id="reset_btn" value="ﾘｾｯﾄする"> 
 		</div>
 	</form:form>
 </body>

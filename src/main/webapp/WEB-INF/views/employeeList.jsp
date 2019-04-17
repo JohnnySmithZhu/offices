@@ -27,11 +27,7 @@
 		<h1>人物設定</h1>
 		<br>
 		<div>
-			<input id="s_ID" name="s_ID" type="text" Value="">(隐藏项目=s_ID，调试用)
-		</div>
-		<br>
-		<div>
-			<label>社員ID</label> <form:input path="employeeNo"  />
+			<label>社員ID</label> <form:input path="employeeID"  />
 		</div>
 		<br>
 		<div>
@@ -56,12 +52,8 @@
 		<br>
 		<div>
 			<label>入社年月日</label> <input
-				id="nyushaDate" name="nyushaDate" type="text" Value="${nyushaDate}">
+				id="hireDate" name="hireDate" type="text" Value="${入社日}">
 		</div>
-
-		<br>
-		
-		
 		<br>
 		<div>
 			<table id="emlist" style="width: 70%">
