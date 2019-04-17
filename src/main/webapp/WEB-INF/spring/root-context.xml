@@ -11,13 +11,13 @@
         	<value>com.mysql.jdbc.Driver</value>
     	</property>
     	<property name="url">
-        	<value>jdbc:mysql://127.0.0.1:3306/softtech_office?useSSL=false</value>
+        	<value>jdbc:mysql://127.0.0.1:3306/employees_profile?useSSL=false</value>
     	</property>
     	<property name="username">
         	<value>root</value>
     	</property>
     	<property name="password">
-        	<value>softtech</value>
+        	<value>a1B2c3D4e5[]</value>
     	</property>
 	</bean>
 	
