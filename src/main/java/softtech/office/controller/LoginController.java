@@ -63,12 +63,13 @@ public class LoginController {
 		
 		// パスワードの判断
 		if (loginbean.getPassword().equals(eBean.getPassword())){
+
 			// 給料明細の情報を取得する。
 			// TODO:①salaryサービス
 			// TODO:②給料明細を取得
 			// TODO:②給料明細JSP作成
 			// TODO:②給料明細をMODELにセットする。
-			return "employeeListview";
+			return "salaryInfo";
 		}
 		return "login";
 	}

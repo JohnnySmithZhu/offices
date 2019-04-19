@@ -42,7 +42,7 @@ public class SalaryinfoController {
 		
 		model.addAttribute("SalaryinfoForm", ebean);
 		
-		return "SalaryinfoList";
+		return "SalaryInfo";
 		
 	}
 }
