@@ -16,7 +16,7 @@ public class SalaryinfoService extends comService {
 		SalaryinfoBean ebean = new  SalaryinfoBean();
 		List<SalaryinfoBean> rtns = new ArrayList<SalaryinfoBean>();
 		
-		List<Map<String, Object>> list = jdbcTemplate.queryForList("SELECT " + employeeID + "FROM salaryinfo");
+		List<Map<String, Object>> list = jdbcTemplate.queryForList("SELECT * FROM salaryinfo where employeeID = '" + employeeID + "'");
 		ebean.setEmployeeID(list.get(0).get("name").toString());
 		rtns.add(ebean);
 		

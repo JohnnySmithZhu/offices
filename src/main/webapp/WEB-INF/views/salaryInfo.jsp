@@ -17,11 +17,12 @@
 
 </head>
 <body>
-<form id="fbean" name="fbean" method="post">
+
 <h1>給料明細</h1>>
+　<form:form id="fbean" name="fbean" modelAttribute="salaryinfoBean" method="get">
+　　　...
+　　　<label>社員ID</label> <input path="employeeID" >
 
-	<div id="example-table"></div>
-
-	</form>
+	</form:form>
 </body>
 </html>
