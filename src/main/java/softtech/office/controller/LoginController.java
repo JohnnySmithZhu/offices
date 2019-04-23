@@ -65,14 +65,44 @@ public class LoginController {
 		
 		// パスワードの判断
 		if (loginbean.getPassword().equals(eBean.getPassword())){
-			@RequestMapping(value = "/salaryinfo", method = RequestMethod.GET)
-			public String Salary(Locale locale, Model model,  @ModelAttribute("SalaryinfoBean") SalaryinfoBean salarybean) {
-				logger.info("call Salaryinfo");
-			SalaryinfoBean salaryinfobean = new SalaryinfoBean();
-			DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-			EmployeeBean ebean = SalaryinfoService.getSalaryinfo(salaryinfobean);
-			model.addAttribute("salaryinfo", salarybean);
-			model.addAttribute("モード", "0");
+			// ③-1-1 ログイン画面で入力されたIDとパスワードを取得
+            String id = request.getParameter("employeeID");
+            String pass = request.getParameter("password");
+
+            // ③-1-2 ユーザ情報をモデルに格納するために指示
+            // ③-1-3 ログイン処理クラスをインスタンス化
+            LoginBean login = new LoginBean();
+
+            // ③-1-4 ID処理クラスに②-1-1で取得したIDを渡してユーザ情報をモデルに格納
+            SalaryinfoBean bean = loginService.getLogin(loginbean.getEmployeeID());
+
+            // ③-2 モデルの情報を判定
+            if (bean != null) {
+                // ③-2-1 モデルの情報が存在する場合はsetAttributeメソッドを使ってセッションに情報をセット
+                // モデル（ユーザ情報）
+                session.setAttribute("login_user_bean", bean);
+                // ログイン状態
+                session.setAttribute("login_state", "login");
+
+                // ③-2-2 つぎに表示させる画面（ビュー）を指定
+                rd = request.getRequestDispatcher("./ShoppingServlet");
+            } else {
+                // ③-3 モデルの情報が存在しない（IDに紐づくユーザ情報がない）場合
+                // ③-3-1 つぎに表示させる画面（ビュー）を指定
+                rd = request.getRequestDispatcher("./jsp/loginFailed.jsp");
+            }
+
+            rd.forward(request, response);
+
+        } else if (btn.equals("ログアウト")) {
+            // ④ クリックされたボタンが「logout」の場合はログアウト処理（セッションの破棄）を実施
+            session.removeAttribute("login_state");
+            session.removeAttribute("login_user_bean");
+            response.sendRedirect("./");
+        }
+
+    }
+			
 			// 給料明細の情報を取得する。
 			// TODO:①salaryサービス
 			// TODO:②給料明細を取得
@@ -80,7 +110,7 @@ public class LoginController {
 			// TODO:②給料明細をMODELにセットする。
 			return "salaryInfo";
 		}
-		}
+		
 		return "login";
 	}
 }
