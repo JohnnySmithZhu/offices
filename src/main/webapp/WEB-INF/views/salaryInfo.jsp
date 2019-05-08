@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%--HTML 5対応--%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <html>
 <head>
@@ -18,11 +20,9 @@
 </head>
 <body>
 
-<h1>給料明細</h1>>
-　<form:form id="fbean" name="fbean" modelAttribute="salaryinfoBean" method="get">
-　　　...
-　　　<label>社員ID</label> <input path="employeeID" >
-
-	</form:form>
+<h1>給料明細</h1>
+<form:form id="fbean" name="fbean" modelAttribute="salaryinfoBean" method="get">
+<label>金額</label> <form:input path="sum" />
+</form:form>
 </body>
 </html>

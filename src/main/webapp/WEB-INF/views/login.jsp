@@ -336,12 +336,12 @@
 		<br>
 		<div>
 			<label>社員ID：</label> <input id="employeeID" name="employeeID"
-				type="text" Value="">
+				type="text" Value="" maxlength="9" size="9">
 		</div>
 		<br>
 		<div>
-			<label>パスワード：</label> <input id="password" name="password"
-				type="text" Value="">
+			<label>パスワード：</label> <input type="password" id="password" name="password"
+				type="text" Value="" maxlength="8" size="8">
 		</div>
 		<div>
 			<input type="submit" id="login_btn" Value="ログイン"> <input
